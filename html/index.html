@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>主页-小破孩工作室</title>
+		<link rel="stylesheet" type="text/css" href="../jquery-easyui/themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../jquery-easyui/themes/icon.css">
+		<link rel="stylesheet" href="../css/public.css" />
+		<link rel="stylesheet" href="../css/index.css" />
+		<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="../jquery-easyui/jquery.easyui.min.js"></script>
+		<script type="application/javascript" src="../layer/layer.js"></script>
+		<script type="text/javascript" src="../js/echarts.min.js" ></script>
+		<script type="text/javascript" src="../js/public.js"></script>
+		<script type="text/javascript" src="../js/index/index.js"></script>
+	</head>
+	<body class="easyui-layout">
+		<!--
+        	作者：1453296946@qq.com
+        	时间：2018-01-23
+        	描述：顶部样式
+        -->
+		<div data-options="region:'north',border:false" style="height: 80px;">
+			<div class="main-head">
+				<span class="logo">后台管理系统</span>
+				<span class="mian-user">
+					<i class="background-style"></i>
+					<ul class="transition">
+						<li>用户名</li>
+						<li>基本信息</li>
+						<li>账号安全</li>
+						<li>退出</li>
+					</ul>
+				</span>
+				<div class="main-search">
+					<img src="../img/search-white.png" alt="检索"/>
+					<input type="text" class="search-key" placeholder="请输入检索内容" maxlength="20"/>
+				</div>
+			</div>
+		</div>
+		
+		<!--
+        	作者：1453296946@qq.com
+        	时间：2018-01-23
+        	描述：左侧菜单
+        -->
+		<div class="mian-menu" data-options="region:'west',split:false,border:false" style="width: 200px;background-color: #2f3b53;">
+			<div class="nav transition">
+				<div class="nav-title"><i class="background-style"></i><p><span>菜单1</span></p><i class="background-style transition"></i></div>
+				<ul class="nav-menu">
+					<li title="item1" url="menu/user/index.html" menuId="1"><span>item1</span></li>
+					<li title="item2" url="menu/user/index.html" menuId="2"><span>item2</span></li>
+					<li title="item3" url="menu/user/index.html" menuId="3"><span>item3</span></li>
+					<li title="item4" url="menu/user/index.html" menuId="4"><span>item4</span></li>
+				</ul>
+			</div>	
+			<div class="nav transition">
+				<div class="nav-title"><i class="background-style"></i><p><span>菜单2</span></p><i class="background-style transition"></i></div>
+				<ul class="nav-menu">
+					<li title="item1" url="menu/user/index.html" menuId="1"><span>item1</span></li>
+					<li title="item2" url="menu/user/index.html" menuId="2"><span>item2</span></li>
+					<li title="item3" url="menu/user/index.html" menuId="3"><span>item3</span></li>
+					<li title="item4" url="menu/user/index.html" menuId="4"><span>item4</span></li>
+					<li title="item4" url="menu/user/index.html" menuId="5"><span>item5</span></li>
+					<li title="item4" url="menu/user/index.html" menuId="6"><span>item6</span></li>
+				</ul>
+			</div>
+			<div class="nav transition">
+				<div class="nav-title"><i class="background-style"></i><p><span>菜单3</span></p><i class="background-style transition"></i></div>
+				<ul class="nav-menu">
+					<li title="item1" url="menu/user/index.html" menuId="1"><span>item1</span></li>
+					<li title="item2" url="menu/user/index.html" menuId="2"><span>item2</span></li>
+					<li title="item3" url="menu/user/index.html" menuId="3"><span>item3</span></li>
+					<li title="item4" url="menu/user/index.html" menuId="4"><span>item4</span></li>
+				</ul>
+			</div>
+		</div>
+		
+		<!--
+        	作者：1453296946@qq.com
+        	时间：2018-01-23
+        	描述：菜单对应页面
+        -->
+		<div data-options="region:'center'" data-options="border:false">
+			<div id="main-tabs" class="easyui-tabs" data-options="border:false,fit:true">
+				
+			</div>
+		</div>
+		
+		<!--
+        	作者：1453296946@qq.com
+        	时间：2018-01-23
+        	描述：右侧模块
+        -->
+		<!--<div data-options="region:'east',split:true" title="East" style="width:100px;">
+			
+		</div>-->
+		
+		<!--
+        	作者：1453296946@qq.com
+        	时间：2018-01-23
+        	描述：底部模块
+        -->
+		<!--<div data-options="region:'south'" style="height:50px;">
+			
+		</div>-->
+	</body>
+</html>

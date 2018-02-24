@@ -1,0 +1,39 @@
+<div class="main-head">
+	<span class="logo">后台管理系统</span>
+	<span class="mian-user">
+		<i class="background-style"></i>
+		<ul class="transition">
+			<li>用户名</li>
+			<li>基本信息</li>
+			<li>账号安全</li>
+			<li>退出</li>
+		</ul>
+	</span>
+	<div class="main-search">
+		<img src="../img/search-white.png" alt="检索"/>
+		<input type="text" class="search-key" placeholder="请输入检索内容" maxlength="20"/>
+	</div>
+</div>
+<script>
+	$(function(){
+		//展示检索框
+		$(".main-search img").bind("mouseover", function(){
+			if(!$(this).parent().hasClass("show")){
+				$(this).parent().addClass("show");
+				$(this).next().focus();
+			}
+		});
+		//隐藏检索框
+		$(".main-search input").bind("blur", function(){
+			if(0 >= $(this).val().length){
+				$(this).parent().removeClass("show");
+			}
+		});
+		//监听检索框回车事件
+		$(".main-search input").bind("keydown", function(event){
+			if(13 == event.keyCode){
+				console.info($(this).val());
+	    	}
+		});
+	});
+</script>

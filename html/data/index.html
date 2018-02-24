@@ -1,0 +1,536 @@
+<style>
+	.data-left{
+		width: 80%;
+		float: left;
+	}
+	.data-right{
+		width: 19%;
+		float: right;
+	}
+	.data-flow{
+		padding: 20px 0 24px 20px;
+		border-radius: 5px;
+		background-color: #fff;
+	}
+	.data-flow h1{
+		width: 100%;
+		height: 20px;
+		line-height: 20px;
+		text-align: left;
+		font-size: 18px;
+		color: #323232;
+	}
+	.data-flow ul{
+		height: 100px;
+		padding-left: 100px;
+	}
+	.data-flow ul li{
+		width: 20%;
+		float: left;
+		position: relative;
+	}
+	.data-flow ul li div{
+		padding-right: 80px;
+	}
+	.data-flow ul li div p{
+		width: 100%;
+		height: 14px;
+		line-height: 14px;
+		font-size: 14px;
+		margin-top: 24px;
+		text-align: right;
+	}
+	.data-flow ul li div p:last-child{
+		height: 26px;
+		line-height: 26px;
+		margin-top: 27px;
+		margin-bottom: 10px;
+		font-size: 26px;
+	}
+	.data-flow ul li i{
+		width: 1px;
+		height: 100%;
+		background-color: #ebebeb;
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: inline-block;
+	}
+	
+	.data-echarts{
+		margin-top: 10px;
+		width: 100%;
+	}
+	.data-echarts li{
+		background-color: #fff !important;
+		border-radius: 5px;
+		margin-bottom: 10px;
+		display: inline-block;
+	}
+	.data-echarts li:nth-child(2n+1){
+		width: 29%;
+		float: left;
+	}
+	.data-echarts li:nth-child(2n+2){
+		width: 70%;
+		float: right;
+	}
+	
+	.data-statistics{
+		padding: 24px;
+		background-color: #fff;
+		border-radius: 5px;
+		display: inline-block;
+	}
+	.data-statistics li{
+		width: 50%;
+		height: 123px;
+		float: left;
+		position: relative;
+	}
+	.data-statistics li:nth-child(n+3){
+		margin-top: 24px;
+	}
+	.data-statistics li p{
+		width: 100%;
+		float: left;
+		text-align: center;
+	}
+	.data-statistics li p:first-child{
+		height: 26px;
+		line-height: 26px;
+		font-size: 26px;
+		margin-top: 21px;
+	}
+	.data-statistics li p:nth-child(2){
+		height: 14px;
+		line-height: 14px;
+		font-size: 14px;
+		margin-top: 19px;
+	}
+	.data-statistics li i{
+		position: absolute;
+		background-color: #ebebeb;
+	}
+	.data-statistics li i.right{
+		width: 1px;
+		height: 100px;
+		top: 0;
+		right: 0;
+	}
+	.data-statistics li i.bottom{
+		width: 80%;
+		height: 1px;
+		bottom: 0;
+		left: 0;
+	}
+	.data-statistics li i.left{
+		width: 1px;
+		height: 100px;
+		top: 0;
+		left: 0;
+	}
+	.data-statistics li i.top{
+		width: 80%;
+		height: 1px;
+		top: -24px;
+		right: 0;
+	}
+	
+	.data-notice{
+		height: 530px;
+		margin-top: 10px;
+		padding: 20px;
+		background-color: #fff;
+		border-radius: 5px;
+		overflow: hidden;
+		display: block;
+	}
+	.data-notice li{
+		width: 92%;
+		float: left;
+		padding-left: 8%;
+		margin-bottom: 20px;
+		display: inline-block;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+	.data-notice li:first-child{
+		width: 100%;
+		padding-left: 0;
+	}
+	.data-notice li:last-child{
+		margin-bottom: 0;
+	}
+</style>
+<div id="data-index" style="padding-top: 10px; padding-left: 10px;width: 100%;height: 100%;">
+	<div class="data-left">
+		<div class="data-flow">
+			<h1>本月流量</h1>
+			<ul>
+				<li>
+					<div>
+						<p>浏览量（PV）</p>
+						<p>99999</p>
+					</div>
+					<i></i>
+				</li>
+				<li>
+					<div>
+						<p>访客量（UV）</p>
+						<p>99999</p>
+					</div>
+					<i></i>
+				</li>
+				<li>
+					<div>
+						<p>IP数</p>
+						<p>99999</p>
+					</div>
+					<i></i>
+				</li>
+				<li>
+					<div>
+						<p>平均访问时长</p>
+						<p>00:05:00</p>
+					</div>
+					<i></i>
+				</li>
+				<li>
+					<div>
+						<p>新增用户</p>
+						<p>99999</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<ul class="data-echarts">
+			<li id="data-artwork-type-statistics" style="height:420px;"></li>
+			<li id="data-sales-statistics" style="height: 420px;"></li>
+			<li id="data-access-statistics" style="height:295px;"></li>
+			<li id="data-browse-statistics" style="height:295px;"></li>
+		</ul>
+	</div>
+	<div class="data-right">
+		<ul class="data-statistics">
+			<li>
+				<p>9999</p>
+				<p>今日访问量</p>
+				<i class="right"></i>
+				<i class="bottom"></i>
+			</li>
+			<li>
+				<p>9999</p>
+				<p>本周订单数</p>
+			</li>
+			<li>
+				<p>9999</p>
+				<p>用户总数量</p>
+			</li>
+			<li>
+				<p>9999</p>
+				<p>本周新用户</p>
+				<i class="top"></i>
+				<i class="left"></i>
+			</li>
+		</ul>
+		<ul class="data-notice">
+			<li><h3>待办事项</h3></li>
+			<li>完成每日基本任务</li>
+			<li>完成每日基本任务完成每日基本任务完成每日基本任务完成每日基本任务</li>
+		</ul>
+	</div>
+</div>
+<script>
+	$("#data-index").css('width', parseInt($("#data-index").css('width'))-20+'px');
+	$("#data-index").css('height', parseInt($("#data-index").css('height'))-10+'px');
+	
+	var artworkTypeStatistics = document.getElementById("data-artwork-type-statistics");
+	var artworkTypeStatisticsChart = echarts.init(artworkTypeStatistics);
+	var option1 = {
+	    title: {
+	        text: '天气情况统计',
+	        //subtext: '虚构数据',
+	        top: '10',
+	        left: '10',
+	        textStyle: {
+	        	fontSize: '18',
+	        	color: '#323232'
+	        }
+	    },
+	    tooltip : {
+	        trigger: 'item',
+	        formatter: "{a} <br/> {b} : {c} ({d}%)",
+	        textStyle: {
+	        	fontSize: '12',
+	        	color: '#fff'
+	        }
+	    },
+	    legend: {
+	    	type: 'scroll',
+	        //orient: 'vertical',
+	        top: 50,
+	        x: 'center',
+	        data: ['西凉', '益州','兖州','荆州','幽州'],
+	        textStyle: {
+	        	fontSize: '14',
+	        	color: '#323232'
+	        }
+	    },
+	    toolbox: {
+	        show : true,
+	        top: '10',
+	        right: '10',
+	        feature : {
+	            mark : {show: true},
+	            dataView : {show: true, readOnly: false},
+	            magicType : {
+	                show: true,
+	                type: ['pie', 'funnel']
+	            },
+	            restore : {show: true},
+	            saveAsImage : {show: true}
+	        }
+	    },
+	    series : [
+	        {
+	        	name: '城市',
+	            type: 'pie',
+	            radius : '50%',
+	            center: ['50%', '50%'],
+	            selectedMode: 'single',
+	            data:[
+	                {value:1548, name: '幽州'},
+	                {value:535, name: '荆州'},
+	                {value:510, name: '兖州'},
+	                {value:634, name: '益州'},
+	                {value:735, name: '西凉'}
+	            ],
+	            itemStyle: {
+	                emphasis: {
+	                    shadowBlur: 10,
+	                    shadowOffsetX: 0,
+	                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+	                }
+	            },
+	            textStyle: {
+		        	fontSize: '14'
+		        }
+	        }
+	    ]
+	};
+	artworkTypeStatisticsChart.setOption(option1, true);
+	
+	var salesStatistics = document.getElementById("data-sales-statistics");
+	var salesStatisticsChart = echarts.init(salesStatistics);
+	var option2 = {
+		title: {
+	        text: '天气情况统计',
+	        //subtext: '虚构数据',
+	        top: '10',
+	        left: '10',
+	        textStyle: {
+	        	fontSize: '18',
+	        	color: '#323232'
+	        }
+	    },
+	    tooltip : {
+	        /*trigger: 'item',
+	        formatter: "{b} : {c}",
+	        textStyle: {
+	        	fontSize: '12',
+	        	color: '#fff'
+	        }*/
+	        trigger: 'axis',
+	        axisPointer: {
+	            type: 'cross'
+	        }
+	    },
+	    toolbox: {
+	        show : true,
+	        top: '10',
+	        right: '10',
+	        feature : {
+	            mark : {show: true},
+	            dataView : {show: true, readOnly: false},
+	            magicType : {
+	                show: true,
+	                type: ['pie', 'funnel']
+	            },
+	            restore : {show: true},
+	            saveAsImage : {show: true}
+	        }
+	    },
+	    xAxis: {
+	        type: 'category',
+	        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+	    },
+	    yAxis: {
+	        type: 'value'
+	    },
+	    series: [{
+	    	name: '销量',
+	        data: [820, 932, 901, 934, 1290, 1330, 1320],
+	        type: 'line',
+	        radius : '100%',
+	    }]
+	};
+	salesStatisticsChart.setOption(option2);
+	
+	var accessStatistics = document.getElementById("data-access-statistics");
+	var accessStatisticsChart = echarts.init(accessStatistics);
+	var option3 = {
+		title: {
+	        text: '天气情况统计',
+	        //subtext: '虚构数据',
+	        top: '10',
+	        left: '10',
+	        textStyle: {
+	        	fontSize: '18',
+	        	color: '#323232'
+	        }
+	    },
+	    tooltip: {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b}: {c} ({d}%)"
+	    },
+	    legend: {
+	        //orient: 'vertical',
+	        top: '50',
+	        x: 'center',
+	        data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+	    },
+	    toolbox: {
+	        show : true,
+	        top: '10',
+	        right: '10',
+	        feature : {
+	            mark : {show: true},
+	            dataView : {show: true, readOnly: false},
+	            magicType : {
+	                show: true,
+	                type: ['pie', 'funnel']
+	            },
+	            restore : {show: true},
+	            saveAsImage : {show: true}
+	        }
+	    },
+	    series: [
+	        {
+	            name:'访问来源',
+	            type:'pie',
+	            radius: ['30%', '40%'],
+	            avoidLabelOverlap: false,
+	            label: {
+	                normal: {
+	                    show: false,
+	                    position: 'center'
+	                },
+	                emphasis: {
+	                    show: true,
+	                    textStyle: {
+	                        fontSize: '16',
+	                        fontWeight: 'bold'
+	                    }
+	                }
+	            },
+	            labelLine: {
+	                normal: {
+	                    show: false
+	                }
+	            },
+	            data:[
+	                {value:335, name:'直接访问'},
+	                {value:310, name:'邮件营销'},
+	                {value:234, name:'联盟广告'},
+	                {value:135, name:'视频广告'},
+	                {value:1548, name:'搜索引擎'}
+	            ]
+	        }
+	    ]
+	};
+	accessStatisticsChart.setOption(option3);
+	
+	var browseStatistics = document.getElementById("data-browse-statistics");
+	var browseStatisticsChart = echarts.init(browseStatistics);
+	var option4 = {
+	    title: {
+	        text: '天气情况统计',
+	        //subtext: '虚构数据',
+	        top: '10',
+	        left: '10',
+	        textStyle: {
+	        	fontSize: '18',
+	        	color: '#323232'
+	        }
+	    },
+	    tooltip : {
+	        trigger: 'axis',
+	        axisPointer: {
+	            type: 'cross'
+	        }
+	    },
+	    toolbox: {
+	        show : true,
+	        top: '10',
+	        right: '10',
+	        feature : {
+	            mark : {show: true},
+	            dataView : {show: true, readOnly: false},
+	            magicType : {
+	                show: true,
+	                type: ['pie', 'funnel']
+	            },
+	            restore : {show: true},
+	            saveAsImage : {show: true}
+	        }
+	    },
+	    xAxis:  {
+	        type: 'category',
+	        boundaryGap: false,
+	        data: ['00:00', '01:15', '02:30', '03:45', '05:00', '06:15', '07:30', '08:45', '10:00', '11:15', '12:30', '13:45', '15:00', '16:15', '17:30', '18:45', '20:00', '21:15', '22:30', '23:45']
+	    },
+	    yAxis: {
+	        type: 'value',
+	        axisLabel: {
+	            formatter: '{value} W'
+	        },
+	        axisPointer: {
+	            snap: true
+	        }
+	    },
+	    visualMap: {
+	        show: false,
+	        dimension: 0,
+	        pieces: [{
+	            lte: 6,
+	            color: 'green'
+	        }, {
+	            gt: 6,
+	            lte: 8,
+	            color: 'red'
+	        }, {
+	            gt: 8,
+	            lte: 14,
+	            color: 'green'
+	        }, {
+	            gt: 14,
+	            lte: 18,
+	            color: 'red'
+	        }, {
+	            gt: 18,
+	            color: 'green'
+	        }]
+	    },
+	    series: [
+	        {
+	            name:'用电量',
+	            type:'line',
+	            smooth: true,
+	            data: [300, 280, 250, 260, 270, 300, 550, 500, 400, 390, 380, 390, 400, 500, 600, 750, 800, 700, 600, 400],
+	        }
+	    ]
+	};
+	browseStatisticsChart.setOption(option4);
+</script>

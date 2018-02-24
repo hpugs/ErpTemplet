@@ -1,0 +1,46 @@
+<div class="nav transition">
+	<div class="nav-title"><i class="background-style"></i><p><span>菜单1</span></p><i class="background-style transition"></i></div>
+	<ul class="nav-menu">
+		<li title="item1" url="menu/user/index.html" menuId="1"><span>item1</span></li>
+		<li title="item2" url="menu/user/index.html" menuId="2"><span>item2</span></li>
+		<li title="item3" url="menu/user/index.html" menuId="3"><span>item3</span></li>
+		<li title="item4" url="menu/user/index.html" menuId="4"><span>item4</span></li>
+	</ul>
+</div>	
+<div class="nav transition">
+	<div class="nav-title"><i class="background-style"></i><p><span>菜单2</span></p><i class="background-style transition"></i></div>
+	<ul class="nav-menu">
+		<li title="item1" url="menu/user/index.html" menuId="1"><span>item1</span></li>
+		<li title="item2" url="menu/user/index.html" menuId="2"><span>item2</span></li>
+		<li title="item3" url="menu/user/index.html" menuId="3"><span>item3</span></li>
+		<li title="item4" url="menu/user/index.html" menuId="4"><span>item4</span></li>
+		<li title="item4" url="menu/user/index.html" menuId="5"><span>item5</span></li>
+		<li title="item4" url="menu/user/index.html" menuId="6"><span>item6</span></li>
+	</ul>
+</div>
+<div class="nav transition">
+	<div class="nav-title"><i class="background-style"></i><p><span>菜单3</span></p><i class="background-style transition"></i></div>
+	<ul class="nav-menu">
+		<li title="item1" url="menu/user/index.html" menuId="1"><span>item1</span></li>
+		<li title="item2" url="menu/user/index.html" menuId="2"><span>item2</span></li>
+		<li title="item3" url="menu/user/index.html" menuId="3"><span>item3</span></li>
+		<li title="item4" url="menu/user/index.html" menuId="4"><span>item4</span></li>
+	</ul>
+</div>
+<script>
+	$(function(){
+		//菜单展开/隐藏事件
+		$(".nav .nav-title").bind("click", function(){
+			if($(this).parent().hasClass("show")){
+				$(this).parent().removeClass("show");
+				$(this).next().slideUp();
+			}else{
+				$(".nav.show .nav-menu").slideUp();
+				$(".nav.show").removeClass("show");
+				
+				$(this).parent().addClass("show");
+				$(this).next().slideDown();	
+			}
+		});
+	});
+</script>

@@ -1,0 +1,71 @@
+<!--
+	作者：1453296946@qq.com
+	时间：2018-01-23
+	描述：调整easy ui部分样式
+-->
+.tabs-header, .tabs-panels{
+	border-color: #ededed;
+}
+.tabs-header{
+    padding-top: 21px;
+	background-color: #8fa0b4;
+}
+.tabs{
+	padding-left: 10px;
+	height: 50px !important;
+	background-color: #8fa0b4;
+}
+.tabs li{
+	min-width: 150px;
+	height: 50px;
+	margin-right: 10px;
+	background-color: #b9c9da;
+	border-color: #fff;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.tabs li:last-child{
+	margin-right: 0;
+}
+.tabs li.tabs-selected{
+	color: #323232;
+	background-color: #ededed;
+	border-color: #d8d8d8;
+}
+.tabs li a.tabs-inner{
+	min-width: 150px;
+	height: 50px !important;
+	line-height: 50px !important;
+}
+.tabs li a.tabs-close{
+	width: 16px;
+	height: 50px !important;
+	line-height: 50px !important;
+	margin-top: -24px;
+	right: 10px;
+	opacity: 1;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 80%;
+    background-image: url(../img/close.png);
+    display: none;
+}
+.tabs li.tabs-selected a.tabs-close, .tabs li:hover a.tabs-close{
+	display: block;
+}
+.tabs li a.tabs-close:hover{
+	background-color: rgba(0,0,0,0);
+}
+.tabs li span:first-child{
+	font-size: 18px;
+	color: #7f7f7f;
+	display: inline-block;
+}
+.tabs li.tabs-selected span:first-child{
+	font-size: 18px;
+	color: #7f7f7f;
+}
+
+.tabs-panels, .tabs-panels .panel .panel-body{
+	background-color: #ededed;
+}

@@ -1,0 +1,50 @@
+<div id="main-tabs-menu" class="easyui-menu" data-options="onClick:menuHandler" style="width:120px;">
+	<div data-options="name:'refresh'">刷新一下</div>
+	<div class="menu-sep"></div>
+	<div data-options="name:'close'">关闭当前</div>
+	<div data-options="name:'closeOther'">关闭其他</div>
+	<div data-options="name:'closeAll'">关闭全部</div>
+	<div class="menu-sep"></div>
+	<div data-options="name:'exit'">退出登录</div>
+</div>
+
+<script type="text/javascript">
+	$(function() {
+		//初始化右键菜单位置
+		$("#main-tabs .tabs-header").on('contextmenu', 'li.tabs-selected', function(e){
+			e.preventDefault();
+			$('#main-tabs-menu').menu('show', {
+				left: e.pageX,
+				top: e.pageY
+			});
+		});	
+	});
+	/**
+	 * 菜单点击事件
+	 */
+	function menuHandler(item){
+		var itemName = item.name;
+		var tab = getCurrentTab();
+		switch (itemName) {
+			case 'refresh':
+				updateCurrentTab(tab);
+				break;
+			case 'close':
+				closeCurrentTab(tab);
+				break;
+			case 'closeOther':
+				closeNotCurrentTab(tab);
+				break;
+			case 'closeAll':
+				closeAllTab(tab);
+				break;
+			case 'exit':
+				myAlert("退出登录");
+				break;
+	
+			default:
+				myAlert("操作错误", 5);
+				break;
+		}
+	}
+</script>

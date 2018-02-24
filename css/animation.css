@@ -1,0 +1,44 @@
+/**
+ *  宽度有0到1 
+ */
+@keyframes width0and1, @-moz-keyframes width0and1, @-webkit-keyframes width0and1, @-o-keyframes width0and1
+{
+	from {width: 0;}
+	to {width: 1;}
+}
+
+/**
+ *  宽度有1到0 
+ */
+@keyframes width1and0, @-moz-keyframes width1and0, @-webkit-keyframes width1and0, @-o-keyframes width1and0
+{
+	from {width: 1;}
+	to {width: 0;}
+}
+
+/**
+ *  长度有0到1 
+ */
+@keyframes height0and1, @-moz-keyframes height0and1, @-webkit-keyframes height0and1, @-o-keyframes width0and1
+{
+	from {height: 0;}
+	to {height: 1;}
+}
+
+/**
+ *  长度有1到0 
+ */
+@keyframes height1and0, @-moz-keyframes height1and0, @-webkit-keyframes height1and0, @-o-keyframes height1and0
+{
+	from {height: 1;}
+	to {height: 0;}
+}
+
+/**
+ *  right有0到1
+ */
+@keyframes right0and1, @-moz-keyframes right0and1, @-webkit-keyframes right0and1, @-o-keyframes right0and160
+{
+	from {right: 0;}
+	to {right: 1;}
+}
