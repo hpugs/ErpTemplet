@@ -4,7 +4,7 @@ $(function(){
 
 function init(){
 	$(".login-submit").bind("click", function(){
-		//showLoading(this);
+		showLoading(this);
 		document.location.href="html/index.html";
 	});
 }
