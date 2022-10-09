@@ -35,6 +35,18 @@ function init(){
 			$(this).next().slideDown();	
 		}
 	});
+	$(".logout").bind("click", function(){
+		$.get("http://localhost:8888/projectname/user/logout",
+			function(result) {
+				if (undefined != result && result !== "") {
+					var jsonObjs = eval(result);
+					document.location.href="../index.html";
+				} else {
+					myAlert("登出失败");
+				}
+			}
+		);
+	});
 	//添加首页
 	addTab(0, "首页", "data/index.html", false);
 	//修改messager默认按钮文字
