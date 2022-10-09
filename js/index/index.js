@@ -35,6 +35,12 @@ function init(){
 			$(this).next().slideDown();	
 		}
 	});
+	$(".transition li").bind("click", function(){
+		myAlert($(this).html());
+	});
+	$(".register").bind("click", function(){
+		document.location.href="../register.html";
+	});
 	$(".logout").bind("click", function(){
 		$.get("http://localhost:8888/projectname/user/logout",
 			function(result) {
